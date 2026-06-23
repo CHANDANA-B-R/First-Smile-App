@@ -1,14 +1,15 @@
 package com.firstsmile.dao;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import com.firstsmile.dto.Payment;
 
 public interface PaymentDAO {
-   void addPayment(Payment payment);
-   Payment getPaymentById(Integer payment_id);
-   List<Payment> getAllPayments();
-   void updatePayment(Payment payment);
-   void deletePayment(Integer payment_id);
+   boolean addPayment(Payment payment);
+   ArrayList<Payment> getPaymentById(Integer payment_id);
+   ArrayList<Payment> getAllPayments();
+   boolean updatePayment(Payment payment);
+   boolean deletePayment(Integer payment_id);
    
 }
