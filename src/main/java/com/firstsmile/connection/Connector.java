@@ -8,7 +8,7 @@ public class Connector {
 
 	public static Connection requestConnection() {
 		Connection con=null;
-		int a=0;
+		
 		try {
 			Class.forName("com.mysql.cj.jdbc.Driver");
 			con=DriverManager.getConnection("jdbc:mysql://localhost:3306/fc", "root", "Chandu@2004");
@@ -16,6 +16,6 @@ public class Connector {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		return con;
+		return con;	
 	}
 }
