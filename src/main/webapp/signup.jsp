@@ -771,24 +771,13 @@ button.success{
 
       <form id="signupForm" novalidate>
 
-        <div class="field-row">
-          <div class="input" id="firstNameField">
-            <label for="firstName">First Name</label>
-            <div class="input-wrap">
-              <input type="text" id="firstName" placeholder="Jane" autocomplete="given-name" required>
-              <span class="status-icon" id="firstNameStatus">✓</span>
-            </div>
-            <div class="error-text">Please enter your first name.</div>
+        <div class="input" id="nameField">
+          <label for="name">Name</label>
+          <div class="input-wrap">
+            <input type="text" id="name" placeholder="Jane Smith" autocomplete="name" required>
+            <span class="status-icon" id="nameStatus">✓</span>
           </div>
-
-          <div class="input" id="lastNameField">
-            <label for="lastName">Last Name</label>
-            <div class="input-wrap">
-              <input type="text" id="lastName" placeholder="Smith" autocomplete="family-name" required>
-              <span class="status-icon" id="lastNameStatus">✓</span>
-            </div>
-            <div class="error-text">Please enter your last name.</div>
-          </div>
+          <div class="error-text">Please enter your name.</div>
         </div>
 
         <div class="input" id="emailField">
@@ -801,7 +790,7 @@ button.success{
         </div>
 
         <div class="input" id="phoneField">
-          <label for="phone">Phone Number <span style="color:#aaa;font-weight:400;font-size:12px;">(optional)</span></label>
+          <label for="phone">Phone Number</label>
           <div class="input-wrap">
             <input type="tel" id="phone" placeholder="+91 98765 43210" autocomplete="tel">
           </div>
@@ -827,6 +816,15 @@ button.success{
           <div class="error-text">Passwords do not match.</div>
         </div>
 
+        <div class="input" id="locationField">
+          <label for="location">Location</label>
+          <div class="input-wrap">
+            <input type="text" id="location" placeholder="City, Country" autocomplete="address-level2" required>
+            <span class="status-icon" id="locationStatus">✓</span>
+          </div>
+          <div class="error-text">Please enter your location.</div>
+        </div>
+
         <label class="terms-row" id="termsRow">
           <span class="checkbox" id="termsBox">
             <svg viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg>
@@ -841,7 +839,7 @@ button.success{
         </button>
 
         <div class="login-link">
-          Already have an account? <a href="login.jsp">Sign In</a>
+          Already have an account? <a href="firstsmile-login__1_.html">Sign In</a>
         </div>
 
       </form>
@@ -895,16 +893,16 @@ function liveText(inputEl, fieldEl, statusEl, validateFn) {
 }
 
 liveText(
-  document.getElementById('firstName'),
-  document.getElementById('firstNameField'),
-  document.getElementById('firstNameStatus'),
+  document.getElementById('name'),
+  document.getElementById('nameField'),
+  document.getElementById('nameStatus'),
   v => v.length >= 1
 );
 
 liveText(
-  document.getElementById('lastName'),
-  document.getElementById('lastNameField'),
-  document.getElementById('lastNameStatus'),
+  document.getElementById('location'),
+  document.getElementById('locationField'),
+  document.getElementById('locationStatus'),
   v => v.length >= 1
 );
 
@@ -1011,20 +1009,16 @@ const btnLabel = signupBtn.querySelector('.btn-label');
 form.addEventListener('submit', function(e) {
   e.preventDefault();
 
-  const firstName = document.getElementById('firstName').value.trim();
-  const lastName = document.getElementById('lastName').value.trim();
+  const name = document.getElementById('name').value.trim();
   const email = document.getElementById('email').value.trim();
   const password = passwordInput.value;
   const confirm = confirmInput.value;
+  const location = document.getElementById('location').value.trim();
 
   let valid = true;
 
-  if (!firstName) {
-    document.getElementById('firstNameField').classList.add('has-error');
-    valid = false;
-  }
-  if (!lastName) {
-    document.getElementById('lastNameField').classList.add('has-error');
+  if (!name) {
+    document.getElementById('nameField').classList.add('has-error');
     valid = false;
   }
   if (!emailPattern.test(email)) {
@@ -1037,6 +1031,10 @@ form.addEventListener('submit', function(e) {
   }
   if (confirm !== password || confirm.length === 0) {
     confirmField.classList.add('has-error');
+    valid = false;
+  }
+  if (!location) {
+    document.getElementById('locationField').classList.add('has-error');
     valid = false;
   }
   if (!termsChecked) {
