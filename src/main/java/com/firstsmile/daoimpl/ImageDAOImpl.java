@@ -52,7 +52,7 @@ public class ImageDAOImpl implements ImageDAO {
 
 	@Override
 	public void updateImage(Image image) {
-		String query="Update Image set image_id=? ,file_path=?";
+		String query="Update Image set image_id=? ,file_path=? where image_id=?";
 		try {
 			PreparedStatement ps=con.prepareStatement(query);
 			ps.setInt(1, image.getImage_id());

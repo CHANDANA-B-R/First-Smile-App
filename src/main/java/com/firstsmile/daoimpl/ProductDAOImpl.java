@@ -95,7 +95,7 @@ public class ProductDAOImpl implements ProductDAO {
 
 	@Override
 	public void updateProduct(Product product) {
-		String query = "update product set product_name=?, product_price=? , image_id=? where id=?";
+		String query = "update product set product_name=?, product_price=? , image_id=? where product_id=?";
 		
 		try {
 			PreparedStatement ps = con.prepareCall(query);

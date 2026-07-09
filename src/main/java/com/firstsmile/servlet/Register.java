@@ -23,7 +23,7 @@ protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws S
 	user.setEmail(req.getParameter("email"));
 	user.setPassword(req.getParameter("password"));
 	user.setPhone(req.getParameter("phone"));
-	user.setLocation(req.getParameter("location"));
+	user.setLocation(req.getParameter("address"));
 	udao.addUser(user);
 	req.setAttribute("baby", "User Registration Successful");
 	RequestDispatcher rd=req.getRequestDispatcher("Login.jsp");

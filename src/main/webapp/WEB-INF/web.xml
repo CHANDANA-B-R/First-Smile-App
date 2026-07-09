@@ -2,10 +2,7 @@
 <web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="https://jakarta.ee/xml/ns/jakartaee" xsi:schemaLocation="https://jakarta.ee/xml/ns/jakartaee https://jakarta.ee/xml/ns/jakartaee/web-app_6_0.xsd" version="6.0">
   <display-name>First_Cry_Application</display-name>
   <welcome-file-list>
-<<<<<<< HEAD
-    <welcome-file>Register.jsp</welcome-file>
-=======
-    <welcome-file>login.jsp</welcome-file>
->>>>>>> 6d8ea552157abbad24d3356216a5a9b69626bce3
+
+    <welcome-file>Dashboard.jsp</welcome-file>
   </welcome-file-list>
 </web-app>

@@ -143,7 +143,7 @@
                             class="w-full mt-2 rounded-2xl bg-slate-100 p-4 pr-12 outline-none focus:ring-4 focus:ring-pink-200">
 
                         <button
-                            type="submit"
+                            type="button"
                             onclick="togglePassword()"
                             class="absolute right-4 top-6">
 
@@ -210,7 +210,7 @@
 
                 Don't have an account?
 
-                <a href="Register.jsp"
+                <a href="register.jsp"
                     class="text-pink-500 font-semibold">
 
                     Create Account

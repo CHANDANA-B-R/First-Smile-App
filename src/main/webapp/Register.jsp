@@ -2,220 +2,563 @@
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>FirstSmile - Register</title>
 
-    <!-- Tailwind CSS -->
-    <script src="https://cdn.tailwindcss.com"></script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <!-- Google Font -->
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<title>FirstSmile - Register</title>
 
-    <style>
-        body{
-            font-family:'Poppins',sans-serif;
-            background:linear-gradient(135deg,#fdfdfd,#eef9ff,#fff3f9);
-        }
+<script src="https://cdn.tailwindcss.com"></script>
 
-        .glass{
-            background:rgba(255,255,255,.75);
-            backdrop-filter:blur(20px);
-        }
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
-        .blob{
-            position:absolute;
-            border-radius:50%;
-            filter:blur(35px);
-            opacity:.5;
-            animation:float 6s ease-in-out infinite;
-        }
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"/>
 
-        @keyframes float{
-            0%,100%{transform:translateY(0);}
-            50%{transform:translateY(-20px);}
-        }
-    </style>
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+html,
+body{
+    width:100%;
+    height:100%;
+    overflow:hidden;
+}
+
+body{
+    background:linear-gradient(135deg,#EDF9FF,#FFF8FC,#FDFEFF);
+}
+
+/* Floating Blobs */
+
+.blob{
+    position:absolute;
+    border-radius:50%;
+    filter:blur(65px);
+    opacity:.45;
+    animation:float 8s ease-in-out infinite;
+}
+
+@keyframes float{
+
+0%,100%{
+transform:translateY(0px);
+}
+
+50%{
+transform:translateY(-30px);
+}
+
+}
+
+/* Glass */
+
+.glass{
+    background:rgba(255,255,255,.72);
+    backdrop-filter:blur(20px);
+    box-shadow:0 20px 50px rgba(0,0,0,.08);
+}
+
+</style>
 
 </head>
 
-<body class="relative min-h-screen flex justify-center items-center p-6 overflow-x-hidden overflow-y-auto"></body>
+<body class="relative h-screen w-screen overflow-hidden flex justify-center items-center bg-gradient-to-br from-sky-50 via-white to-pink-50">
+
 <!-- Background -->
-<div class="blob w-48 h-48 bg-sky-200 left-0 top-0"></div>
-<div class="blob w-40 h-40 bg-pink-200 right-10 bottom-10" style="animation-delay:1s"></div>
-<div class="blob w-24 h-24 bg-purple-200 right-44 top-40" style="animation-delay:2s"></div>
 
-<div class="glass rounded-[35px] shadow-2xl w-full max-w-7xl min-h-[780px] grid lg:grid-cols-2"></div>
-    <!-- Left Section -->
-<div class="flex flex-col justify-center items-center text-center p-8 lg:p-10"></div>
-        <h1 class="text-6xl font-bold">
-            <span class="text-pink-500">First</span><span class="text-sky-500">Smile</span> 😊
-        </h1>
-<% String val=(String)request.getAttribute("baby"); %>
-<%if(val!=null){ %>
-<%=val %>
-<%} %>
-        <p class="mt-8 text-2xl text-gray-600">
-            Create your account today.
-        </p>
+<div class="blob bg-sky-300 w-72 h-72 -left-16 -top-10"></div>
 
-        <p class="text-gray-500 mt-2">
-            Shopping made easy for your little one.
-        </p>
+<div class="blob bg-pink-300 w-80 h-80 right-0 -bottom-10"
+style="animation-delay:2s;"></div>
 
-        <div class="text-9xl mt-14 animate-bounce">
-    🧸
+<div class="blob bg-blue-200 w-56 h-56 top-20 right-72"
+style="animation-delay:3s;"></div>
+
+<div class="blob bg-pink-200 w-40 h-40 left-20 bottom-32"
+style="animation-delay:5s;"></div>
+
+<!-- Main Container -->
+
+<div class="glass
+w-[95vw]
+max-w-7xl
+h-[92vh]
+max-h-[92vh]
+rounded-[35px]
+overflow-hidden
+grid
+lg:grid-cols-2">
+
+<!-- LEFT PANEL -->
+
+<div class="bg-gradient-to-br
+from-pink-50
+via-white
+to-sky-50
+p-10
+flex
+flex-col
+justify-center
+items-center
+relative">
+
+<!-- Logo -->
+
+<h1 class="text-6xl font-bold">
+
+<span class="text-pink-500">First</span>
+
+<span class="text-sky-500">Smile</span>
+
+💗
+
+</h1>
+
+<p class="mt-4 text-2xl font-medium text-gray-700">
+
+Everything your little one needs ❤️
+
+</p>
+
+<!-- Decorative Icons -->
+
+<div class="absolute left-8 top-44 text-pink-300 text-3xl">
+♡
 </div>
 
-        <div class="grid grid-cols-2 gap-5 mt-14">
+<div class="absolute right-10 top-60 text-sky-300 text-3xl">
+✦
+</div>
 
-            <div class="bg-white rounded-2xl shadow-lg p-5">
-                🚚<br>
-                Fast Delivery
-            </div>
+<div class="absolute left-16 bottom-48 text-pink-300 text-2xl">
+♥
+</div>
 
-            <div class="bg-white rounded-2xl shadow-lg p-5">
-                🛡️<br>
-                Safe Products
-            </div>
+<!-- Teddy -->
 
-            <div class="bg-white rounded-2xl shadow-lg p-5">
-                💳<br>
-                Easy Payments
-            </div>
+<div class="mt-8">
 
-            <div class="bg-white rounded-2xl shadow-lg p-5">
-                ⭐<br>
-                Trusted Parents
-            </div>
-
-        </div>
-
-    </div>
-
-    <!-- Right Section -->
-<div class="bg-white/70 p-8 lg:p-10"></div>
-        <h2 class="text-5xl font-bold text-gray-800">
-            Create Account
-        </h2>
-
-        <p class="text-gray-500 mt-2">
-            Join the FirstSmile family.
-        </p>
-
-        <form action="Register" method="post" class="mt-8 space-y-5">
-
-            <div class="grid md:grid-cols-2 gap-5">
-
-                <div>
-
-    <label class="font-medium text-gray-700">
-
-        Full Name
-
-    </label>
-
-    <input
-        type="text"
-        name="name"
-        placeholder="Enter your full name"
-        class="w-full mt-2 bg-slate-100 rounded-2xl p-4 focus:ring-4 focus:ring-sky-200 outline-none">
+<img
+src="https://images.unsplash.com/photo-1708440996563-bfbe9617391d?w=600&auto=format&fit=crop&q=60"
+alt="Teddy"
+class="w-64 lg:w-72 mx-auto hover:scale-105 duration-500">
 
 </div>
 
-                
+<!-- Feature Cards -->
 
-            </div>
+<div class="grid grid-cols-2 gap-4 mt-8 w-full">
+    <!-- Card 1 -->
 
-            <div>
-                <label>Email Address</label>
-                <input type="email" name="email"
-                class="w-full mt-2 bg-slate-100 rounded-2xl p-4 focus:ring-4 focus:ring-sky-200 outline-none">
-            </div>
+<div class="bg-white rounded-3xl shadow-lg p-4 flex items-center gap-3">
 
-            <div>
-                <label>Phone Number</label>
-                <input type="text" name="phone"
-                class="w-full mt-2 bg-slate-100 rounded-2xl p-4 focus:ring-4 focus:ring-sky-200 outline-none">
-            </div>
+<div class="w-12 h-12 rounded-full bg-pink-500 flex items-center justify-center text-white text-xl">
+🚚
+</div>
 
-            <div>
-                <label>Address</label>
-                <textarea name="address"
-                class="w-full mt-2 bg-slate-100 rounded-2xl p-4 h-24 resize-none focus:ring-4 focus:ring-pink-200 outline-none"></textarea>
-            </div>
+<div>
 
-            <div class="grid md:grid-cols-2 gap-5">
+<h2 class="font-semibold text-base">
+Fast Delivery
+</h2>
 
-                <div>
-                    <label>Password</label>
-                    <input type="password" id="password" name="password"
-                    class="w-full mt-2 bg-slate-100 rounded-2xl p-4 outline-none focus:ring-4 focus:ring-pink-200">
-                </div>
-
-                <div>
-                    <label>Confirm Password</label>
-                    <input type="password" id="confirmPassword"
-                    class="w-full mt-2 bg-slate-100 rounded-2xl p-4 outline-none focus:ring-4 focus:ring-pink-200">
-                </div>
-
-            </div>
-
-            <div class="flex items-center gap-2">
-
-                <input type="checkbox" required>
-
-                <span class="text-sm text-gray-600">
-                    I agree to the Terms & Conditions
-                </span>
-
-            </div>
-
-            <button
-            class="w-full py-4 rounded-full text-white text-lg font-semibold bg-gradient-to-r from-pink-400 to-sky-400 hover:scale-105 duration-300 shadow-xl">
-
-                Create Account
-
-            </button>
-
-        </form>
-
-        <div class="flex items-center my-8">
-
-            <hr class="flex-1">
-
-            <span class="mx-4 text-gray-400">OR</span>
-
-            <hr class="flex-1">
-
-        </div>
-
-        <div class="grid grid-cols-2 gap-4">
-
-            <button class="border rounded-full py-4 hover:bg-gray-100 transition">
-                🌐 Google
-            </button>
-
-            <button class="border rounded-full py-4 hover:bg-gray-100 transition">
-                📘 Facebook
-            </button>
-
-        </div>
-
-        <p class="text-center mt-8 text-gray-600">
-
-            Already have an account?
-
-            <a href="Login.jsp" class="text-sky-500 font-semibold hover:underline">
-                Login
-            </a>
-
-        </p>
-
-    </div>
+<p class="text-xs text-gray-500">
+Across India
+</p>
 
 </div>
+
+</div>
+
+<!-- Card 2 -->
+
+<div class="bg-white rounded-3xl shadow-lg p-4 flex items-center gap-3">
+
+<div class="w-12 h-12 rounded-full bg-sky-500 flex items-center justify-center text-white text-xl">
+🛡️
+</div>
+
+<div>
+
+<h2 class="font-semibold text-base">
+Baby Safe
+</h2>
+
+<p class="text-xs text-gray-500">
+Premium Quality
+</p>
+
+</div>
+
+</div>
+
+<!-- Card 3 -->
+
+<div class="bg-white rounded-3xl shadow-lg p-4 flex items-center gap-3">
+
+<div class="w-12 h-12 rounded-full bg-violet-500 flex items-center justify-center text-white text-xl">
+💳
+</div>
+
+<div>
+
+<h2 class="font-semibold text-base">
+Easy Payment
+</h2>
+
+<p class="text-xs text-gray-500">
+UPI • Card • COD
+</p>
+
+</div>
+
+</div>
+
+<!-- Card 4 -->
+
+<div class="bg-white rounded-3xl shadow-lg p-4 flex items-center gap-3">
+
+<div class="w-12 h-12 rounded-full bg-yellow-400 flex items-center justify-center text-white text-xl">
+⭐
+</div>
+
+<div>
+
+<h2 class="font-semibold text-base">
+Trusted
+</h2>
+
+<p class="text-xs text-gray-500">
+10000+ Parents
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+<!-- ================= RIGHT PANEL ================= -->
+
+<div class="bg-white/80 p-8 overflow-y-auto">
+
+<h1 class="text-5xl font-bold text-gray-800">
+Create Account
+</h1>
+
+<p class="mt-2 text-lg text-gray-500">
+
+Join the
+
+<span class="text-pink-500 font-semibold">
+First
+</span>
+
+<span class="text-sky-500 font-semibold">
+Smile
+</span>
+
+family.
+
+</p>
+
+<form action="Register" method="post" class="mt-6 space-y-4">
+
+<div class="grid grid-cols-2 gap-4">
+
+<!-- Name -->
+
+<div>
+
+<label class="font-semibold">
+Full Name
+</label>
+
+<div class="relative mt-2">
+
+<i class="fa-solid fa-user absolute left-4 top-4 text-gray-400"></i>
+
+<input
+type="text"
+name="name"
+placeholder="Enter your full name"
+class="w-full pl-12 py-3 pr-4 rounded-2xl border border-gray-200 focus:ring-4 focus:ring-pink-200 outline-none">
+
+</div>
+
+</div>
+
+<!-- Email -->
+
+<div>
+
+<label class="font-semibold">
+Email Address
+</label>
+
+<div class="relative mt-2">
+
+<i class="fa-solid fa-envelope absolute left-4 top-4 text-gray-400"></i>
+
+<input
+type="email"
+name="email"
+placeholder="Enter email"
+class="w-full pl-12 py-3 pr-4 rounded-2xl border border-gray-200 focus:ring-4 focus:ring-sky-200 outline-none">
+
+</div>
+
+</div>
+
+<!-- Phone -->
+
+<div>
+
+<label class="font-semibold">
+Phone Number
+</label>
+
+<div class="relative mt-2">
+
+<i class="fa-solid fa-phone absolute left-4 top-4 text-gray-400"></i>
+
+<input
+type="tel"
+name="phone"
+placeholder="Phone Number"
+class="w-full pl-12 py-3 pr-4 rounded-2xl border border-gray-200 focus:ring-4 focus:ring-pink-200 outline-none">
+
+</div>
+
+</div>
+
+<!-- Address -->
+
+<div>
+
+<label class="font-semibold">
+Address
+</label>
+
+<div class="relative mt-2">
+
+<i class="fa-solid fa-location-dot absolute left-4 top-4 text-gray-400"></i>
+
+<textarea
+rows="1"
+name="address"
+placeholder="Address"
+class="w-full pl-12 py-3 pr-4 rounded-2xl border border-gray-200 resize-none focus:ring-4 focus:ring-sky-200 outline-none"></textarea>
+
+</div>
+
+</div>
+
+</div>
+
+<!-- Password Section -->
+
+<div class="grid grid-cols-2 gap-4"><!-- Password -->
+
+<div>
+
+<label class="font-semibold">
+Password
+</label>
+
+<div class="relative mt-2">
+
+<i class="fa-solid fa-lock absolute left-4 top-4 text-gray-400"></i>
+
+<input
+id="password"
+type="password"
+name="password"
+placeholder="Password"
+class="w-full pl-12 pr-12 py-3 rounded-2xl border border-gray-200 outline-none focus:ring-4 focus:ring-pink-200">
+
+<button
+type="button"
+onclick="togglePassword('password',this)"
+class="absolute right-4 top-4 text-gray-400">
+
+<i class="fa-solid fa-eye"></i>
+
+</button>
+
+</div>
+
+</div>
+
+<!-- Confirm Password -->
+
+<div>
+
+<label class="font-semibold">
+Confirm Password
+</label>
+
+<div class="relative mt-2">
+
+<i class="fa-solid fa-lock absolute left-4 top-4 text-gray-400"></i>
+
+<input
+id="confirmPassword"
+type="password"
+placeholder="Confirm Password"
+class="w-full pl-12 pr-12 py-3 rounded-2xl border border-gray-200 outline-none focus:ring-4 focus:ring-sky-200">
+
+<button
+type="button"
+onclick="togglePassword('confirmPassword',this)"
+class="absolute right-4 top-4 text-gray-400">
+
+<i class="fa-solid fa-eye"></i>
+
+</button>
+
+</div>
+
+</div>
+
+</div>
+
+<!-- Terms -->
+
+<div class="flex items-center gap-3 mt-2">
+
+<input
+type="checkbox"
+required
+class="accent-pink-500 w-5 h-5">
+
+<p class="text-gray-600 text-sm">
+
+I agree to the
+
+<a href="#" class="text-pink-500 font-semibold hover:underline">
+
+Terms & Conditions
+
+</a>
+
+</p>
+
+</div>
+
+<!-- Register Button -->
+
+<button
+type="submit"
+class="w-full py-3 rounded-full bg-gradient-to-r from-pink-500 to-sky-500 text-white text-lg font-semibold shadow-lg hover:scale-105 transition duration-300">
+
+<i class="fa-solid fa-user-plus mr-2"></i>
+
+Create Account
+
+</button>
+
+</form>
+
+<!-- OR -->
+
+<div class="flex items-center my-5">
+
+<hr class="flex-1">
+
+<span class="mx-4 text-gray-400">
+
+OR
+
+</span>
+
+<hr class="flex-1">
+
+</div>
+
+<!-- Social Buttons -->
+
+<div class="grid grid-cols-2 gap-4">
+
+<button
+class="border rounded-2xl py-3 hover:bg-gray-100 transition">
+
+<i class="fa-brands fa-google text-red-500 mr-2"></i>
+
+Google
+
+</button>
+
+<button
+class="border rounded-2xl py-3 hover:bg-gray-100 transition">
+
+<i class="fa-brands fa-facebook text-blue-600 mr-2"></i>
+
+Facebook
+
+</button>
+
+</div>
+
+<p class="text-center mt-6 text-gray-600">
+
+Already have an account?
+
+<a
+href="login.jsp"
+class="text-sky-500 font-semibold hover:underline">
+
+Login
+
+</a>
+
+</p>
+
+</div>
+
+</div>
+
+<script>
+
+function togglePassword(id,button){
+
+const input=document.getElementById(id);
+
+const icon=button.querySelector("i");
+
+if(input.type==="password"){
+
+input.type="text";
+
+icon.classList.remove("fa-eye");
+
+icon.classList.add("fa-eye-slash");
+
+}else{
+
+input.type="password";
+
+icon.classList.remove("fa-eye-slash");
+
+icon.classList.add("fa-eye");
+
+}
+
+}
+
+</script>
 
 </body>
+
 </html>
