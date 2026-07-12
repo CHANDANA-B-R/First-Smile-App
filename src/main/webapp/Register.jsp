@@ -74,6 +74,10 @@ transform:translateY(-30px);
 <body class="relative h-screen w-screen overflow-hidden flex justify-center items-center bg-gradient-to-br from-sky-50 via-white to-pink-50">
 
 <!-- Background -->
+ <%String val=(String)request.getAttribute("baby"); %>
+        <%if(val!=null){ %>
+        <%=val %>
+        <%} %>
 
 <div class="blob bg-sky-300 w-72 h-72 -left-16 -top-10"></div>
 
@@ -416,6 +420,7 @@ Confirm Password
 <input
 id="confirmPassword"
 type="password"
+name="cnfmpassword"
 placeholder="Confirm Password"
 class="w-full pl-12 pr-12 py-3 rounded-2xl border border-gray-200 outline-none focus:ring-4 focus:ring-sky-200">
 
@@ -447,7 +452,7 @@ class="accent-pink-500 w-5 h-5">
 
 I agree to the
 
-<a href="#" class="text-pink-500 font-semibold hover:underline">
+<a href="Login.jsp" class="text-pink-500 font-semibold hover:underline">
 
 Terms & Conditions
 
@@ -460,7 +465,7 @@ Terms & Conditions
 <!-- Register Button -->
 
 <button
-type="submit"
+type="submit" 
 class="w-full py-3 rounded-full bg-gradient-to-r from-pink-500 to-sky-500 text-white text-lg font-semibold shadow-lg hover:scale-105 transition duration-300">
 
 <i class="fa-solid fa-user-plus mr-2"></i>
@@ -516,7 +521,7 @@ Facebook
 Already have an account?
 
 <a
-href="login.jsp"
+href="Login.jsp"
 class="text-sky-500 font-semibold hover:underline">
 
 Login

@@ -23,11 +23,11 @@ protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws S
 	if(user!=null) {
 		
 		session.setAttribute("baby", user);
-	    resp.sendRedirect("Dashboard.jsp");
+	    resp.sendRedirect("Admin.jsp");
 	}
 	else {
-		session.setAttribute("baby", "User doesn'exist");
-		resp.sendRedirect("Register.jsp");
+		req.setAttribute("baby", "User doesn't exist");
+		req.getRequestDispatcher("Register.jsp").forward(req,resp);
 	}
 }
 }

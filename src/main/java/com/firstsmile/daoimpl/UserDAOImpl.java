@@ -115,7 +115,7 @@ public class UserDAOImpl implements UserDAO {
 				 user = new User();
 				 user.setName(rs.getString("name"));
 				 user.setEmail(rs.getString("email"));
-				 user.setPassword(rs.getString("passsword"));
+				 user.setPassword(rs.getString("password"));
 				 user.setPhone(rs.getString("phone"));
 				 user.setLocation(rs.getString("location"));
 			}
@@ -154,7 +154,7 @@ public class UserDAOImpl implements UserDAO {
 			user=new User();
 			user.setName(rs.getString("name"));
 			user.setEmail(rs.getString("email"));
-			user.setPassword(rs.getString("passsword"));
+			user.setPassword(rs.getString("password"));
 			user.setPhone(rs.getString("phone"));
 			user.setLocation(rs.getString("location"));
 		}

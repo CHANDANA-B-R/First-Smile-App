@@ -22,12 +22,21 @@ protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws S
 	user.setName(req.getParameter("name"));
 	user.setEmail(req.getParameter("email"));
 	user.setPassword(req.getParameter("password"));
+	
 	user.setPhone(req.getParameter("phone"));
 	user.setLocation(req.getParameter("address"));
+	if(req.getParameter("password").equals(req.getParameter("cnfmpassword"))) {
 	udao.addUser(user);
 	req.setAttribute("baby", "User Registration Successful");
 	RequestDispatcher rd=req.getRequestDispatcher("Login.jsp");
     rd.forward(req, resp);
+	}
+	else {
+		req.setAttribute("baby", "Password Mismatch");
+		RequestDispatcher rd=req.getRequestDispatcher("Register.jsp");
+		rd.forward(req,resp);
+	}
+	
 	
 }
 }

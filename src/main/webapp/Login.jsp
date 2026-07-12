@@ -100,6 +100,10 @@
         </div>
 
         <!-- Right Side -->
+        <%String val=(String)request.getAttribute("baby"); %>
+        <%if(val!=null){ %>
+        <%=val %>
+        <%} %>
 
         <div class="bg-white/70 px-14 py-14">
 
@@ -171,7 +175,7 @@
 
                 </div>
 
-                <button
+                <button type="submit" 
                     class="w-full py-4 rounded-full text-white font-semibold text-lg bg-gradient-to-r from-sky-400 to-sky-500 hover:scale-105 transition duration-300 shadow-xl">
 
                     Login
