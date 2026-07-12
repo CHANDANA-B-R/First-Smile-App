@@ -3,6 +3,6 @@
   <display-name>First_Cry_Application</display-name>
   <welcome-file-list>
 
-    <welcome-file>Dashboard.jsp</welcome-file>
+    <welcome-file>Login.jsp</welcome-file>
   </welcome-file-list>
 </web-app>

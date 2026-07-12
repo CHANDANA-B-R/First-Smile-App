@@ -100,16 +100,17 @@
         </div>
 
         <!-- Right Side -->
-        <%String val=(String)request.getAttribute("baby"); %>
-        <%if(val!=null){ %>
-        <%=val %>
-        <%} %>
+      
 
         <div class="bg-white/70 px-14 py-14">
 
             <h2 class="text-5xl font-bold text-gray-800">
                 Welcome Back
             </h2>
+            <%String val=(String)request.getAttribute("baby"); %>
+            <%if(val!=null){ %>
+            <%=val %>
+            <%} %>
 
             <p class="text-gray-500 mt-2">
                 Login to continue shopping for your little one.
